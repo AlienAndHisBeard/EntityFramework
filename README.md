@@ -7,7 +7,8 @@ The project contains a console application using entity framework and sqlite:
 - Products with the amount available in the shop,
 - Creating orders,
 - Completing orders (if enough produce is available),
-- Simple console menues.
+- Simple console menues,
+- Exemplary data generation with Bogus.
 
 
 To run the project update the database with the projects migration.
