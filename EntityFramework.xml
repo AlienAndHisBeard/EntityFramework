@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EntityFramework</name>
+    </assembly>
+    <members>
+        <member name="M:EntityFramework.ApplicationDbContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+            Connection string hardcoded only becaouse of the specifications of the laboratory task
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="T:EntityFramework.FakeData">
+            <summary>
+            Specify how to create examplary data for the shop 
+            i.e. Items, Clients, Orders, EClients, EOrders, and order entries.
+            </summary>
+        </member>
+        <member name="T:EntityFramework.Migrations.Init">
+            <inheritdoc />
+        </member>
+        <member name="M:EntityFramework.Migrations.Init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EntityFramework.Migrations.Init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EntityFramework.Migrations.Init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:EntityFramework.Models.Client">
+            <summary>
+            Basic user/client for stationary orders
+            </summary>
+        </member>
+        <member name="T:EntityFramework.Models.EClient">
+            <summary>
+            Electronic user/client with additional IpAddress for online orders
+            </summary>
+        </member>
+        <member name="T:EntityFramework.Models.EOrder">
+            <summary>
+            Electronic/online order with IpAddress of the buyer
+            </summary>
+        </member>
+        <member name="T:EntityFramework.Models.Item">
+            <summary>
+            Item to sell with available amount in the warehouse
+            </summary>
+        </member>
+        <member name="T:EntityFramework.Models.Order">
+            <summary>
+            Order made by the user
+            </summary>
+        </member>
+        <member name="T:EntityFramework.Models.OrderEntry">
+            <summary>
+            Amount of certain item ordered by the client in the specified order
+            </summary>
+        </member>
+        <member name="M:EntityFramework.Repository.GetClients(System.String)">
+            <summary>
+            Get all orders and eorders
+            </summary>
+            <param name="contains"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EntityFramework.Repository.GetOrders">
+            <summary>
+            Get all orders and eorders
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EntityFramework.Repository.CompleteOrder(EntityFramework.Models.Order)">
+            <summary>
+            try to complete the order, if any of the products amounts go into negative,
+            rollback the change and mark incompleted
+            </summary>
+            <param name="order">Order with order entries to validate</param>
+            <returns></returns>
+        </member>
+        <member name="F:EntityFramework.ShopController._repository">
+            <summary>
+            Repository used by the shop
+            </summary>
+        </member>
+        <member name="F:EntityFramework.ShopController._currentClient">
+            <summary>
+            Selected client/eclient
+            </summary>
+        </member>
+        <member name="F:EntityFramework.ShopController._clients">
+            <summary>
+            list of selected clients and eclients
+            </summary>
+        </member>
+        <member name="F:EntityFramework.ShopController._filter">
+            <summary>
+            filter for the shop clients search
+            </summary>
+        </member>
+        <member name="F:EntityFramework.ShopController._exit">
+            <summary>
+            specifies when to exit the appliaction
+            </summary>
+        </member>
+        <member name="F:EntityFramework.ShopController._toMenu">
+            <summary>
+            specifies when to return to the main menu
+            </summary>
+        </member>
+        <member name="M:EntityFramework.ShopController.#ctor(EntityFramework.Repository)">
+            <summary>
+            Creates shop controller with given repository
+            </summary>
+            <param name="repository"></param>
+        </member>
+        <member name="M:EntityFramework.ShopController.SetUp">
+            <summary>
+            Verifies if the store repository is not empty
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EntityFramework.ShopController.RunShop">
+            <summary>
+            Represents main menu of the application
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EntityFramework.ShopController.ChooseClient">
+            <summary>
+            Menu to choose used client/eclient, filtered by the user (string) input from the console
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EntityFramework.ShopController.CreateOrder">
+            <summary>
+            Menu to create and add the order/eorder (based on the type of selected client) to the store repository
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EntityFramework.ShopController.OrderList">
+            <summary>
+            Menu to list all orders/eorders, grouped in pages, with the ability to complete order/eorder,
+            order/eorder is only complited if the amount of the products specified by the order/eorder are available in the warehouse 
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
