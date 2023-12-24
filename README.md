@@ -1,4 +1,4 @@
-# A task for the third laboratories of Programming .NET Local Applications (06.11.2023)
+# A task for the third laboratories of Programming .NET Local Applications (10.12.2023)
 
 The project contains a console application using entity framework and sqlite:
 - Client and EClient classes to represent online and stationary clients (Inheritance with EF),
